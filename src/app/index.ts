@@ -1,8 +1,5 @@
 // import { connect } from "react-redux";
 // import { App } from "./app";
-// import { onWindowResize } from "../redux/actions/app";
-// import { checkAuth, fetchAuthUser } from "../redux/actions/auth";
-// import { getMetadata } from "../redux/actions/metadata";
 // import { MainState } from "../redux/redux";
 
 // const mapStatetoProps = (state: MainState) => ({
@@ -11,9 +8,6 @@
 // });
 // const mapDispatchToProps = {
 //   onWindowResize,
-//   fetchAuthUser,
-//   getMetadata,
-//   checkAuth,
 // };
 
 // export default connect(mapStatetoProps, mapDispatchToProps)(App as any);

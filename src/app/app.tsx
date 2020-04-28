@@ -6,8 +6,6 @@ import HomePage from "./modules/home";
 interface Props {}
 
 export function App({}: Props) {
-  const testing = "Youri Gruiters";
-
   return (
     <>
       <Switch>
