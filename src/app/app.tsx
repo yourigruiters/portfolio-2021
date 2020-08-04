@@ -3,9 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import "./app.scss";
 import HomePage from "./modules/home";
 
-interface Props {}
+interface AppProps {}
 
-export function App({}: Props) {
+const App = ({}: AppProps) => {
   return (
     <>
       <Switch>
@@ -13,4 +13,6 @@ export function App({}: Props) {
       </Switch>
     </>
   );
-}
+};
+
+export default App;
