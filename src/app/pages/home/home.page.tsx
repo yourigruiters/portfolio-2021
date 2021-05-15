@@ -3,12 +3,12 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
   ${({ theme: { colors } }) => `
-    background: ${colors.backgroundColor};
+    background: ${colors.red08};
+    color: ${colors.text00}
   `}
 `;
 
 const Button = styled.div`
-  background: pink;
   padding: 20px;
 `;
 
