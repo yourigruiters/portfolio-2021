@@ -1,11 +1,11 @@
 import { ReduxState } from '../typings/state';
 import App from '../app';
 import { connect } from 'react-redux';
-import { getTheme } from '../redux/theme/selectors';
+import { selectTheme } from '../redux/theme/selectors';
 
 const mapStateToProps = (state: ReduxState) => {
   return {
-    reduxTheme: getTheme(state),
+    reduxTheme: selectTheme(state),
   };
 };
 

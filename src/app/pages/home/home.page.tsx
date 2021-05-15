@@ -3,12 +3,12 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
   ${({ theme: { colors } }) => `
-    background-color: ${colors.backgroundColor};
+    background: ${colors.backgroundColor};
   `}
 `;
 
-const Button = styled.button`
-  background-color: pink;
+const Button = styled.div`
+  background: pink;
   padding: 20px;
 `;
 
@@ -16,8 +16,9 @@ interface Props {
   setTheme: () => void;
 }
 
-const HomeView: React.FC<Props> = ({ setTheme }) => {
+const HomePage: React.FC<Props> = ({ setTheme }) => {
   const testing = 'Toggle Theme';
+
   return (
     <Container>
       <Button onClick={setTheme}>{testing}</Button>
@@ -25,4 +26,4 @@ const HomeView: React.FC<Props> = ({ setTheme }) => {
   );
 };
 
-export default HomeView;
+export default HomePage;
