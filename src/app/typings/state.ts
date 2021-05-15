@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any*/
-import { ThemeState } from './../redux/theme/reducer';
+import { ThemeState } from '../redux/theme/reducer';
 
 export interface ReduxState {
   theme: ThemeState;

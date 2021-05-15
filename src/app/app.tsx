@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HomePage from './modules/home/home.view';
 import { ThemeProvider } from '@emotion/react';
-import { Theme, ThemeType } from '../styles/theme';
+import { Theme, ThemeType } from './styles/theme';
+import HomePage from './containers/pages/home';
 
-interface AppProps {}
+interface Props {
+  reduxTheme: ThemeType;
+}
 
-const App = ({}: AppProps) => {
-  const [theme, setTheme] = useState<ThemeType>('light');
-
+const App: React.FC<Props> = ({ reduxTheme }) => {
   useEffect(() => {
-    console.log(theme);
-  }, [theme]);
+    console.log(reduxTheme);
+  }, [reduxTheme]);
 
   return (
-    <ThemeProvider theme={Theme[theme]}>
+    <ThemeProvider theme={Theme[reduxTheme]}>
       <Switch>
-        <Route
-          path="/"
-          component={() => (
-            <HomePage setTheme={setTheme} theme={theme} />
-          )}
-        />
+        <Route path="/" component={() => <HomePage />} />
       </Switch>
     </ThemeProvider>
   );
