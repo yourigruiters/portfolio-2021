@@ -1,9 +1,13 @@
 import * as React from "react";
-import "./home.view.scss";
+import styled from "@emotion/styled";
 
-const HomeView = (props: any) => {
-  const testing = "Youri Gruiters";
-  return <div>{testing}</div>;
+const Container = styled.div`
+	background-color: red;
+`;
+
+const HomeView = () => {
+	const testing = "Youri Gruiters";
+	return <Container>{testing}</Container>;
 };
 
 export default HomeView;
