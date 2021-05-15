@@ -1,21 +1,27 @@
 export type ThemeType = 'light' | 'dark';
 
-interface ITheme {
-  backgroundColor: string;
-  color: string;
+export interface ITheme {
+  colors: {
+    backgroundColor: string;
+    color: string;
+  };
 }
 
-const lightTheme = {
-  backgroundColor: '#fff',
-  color: '#000',
+export const lightTheme = {
+  colors: {
+    backgroundColor: '#fff',
+    color: '#000',
+  },
 };
 
-const darkTheme = {
-  backgroundColor: '#000',
-  color: '#fff',
+export const darkTheme = {
+  colors: {
+    backgroundColor: '#000',
+    color: '#fff',
+  },
 };
 
-export const Theme: Record<ThemeType, ITheme> = {
+export const ColorTheme: Record<ThemeType, ITheme> = {
   light: lightTheme,
   dark: darkTheme,
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from '@emotion/react';
-import { Theme, ThemeType } from './styles/theme';
+import { ColorTheme, ThemeType } from './styles/theme';
 import HomePage from './containers/pages/home';
 
 interface Props {
@@ -14,7 +14,7 @@ const App: React.FC<Props> = ({ reduxTheme }) => {
   }, [reduxTheme]);
 
   return (
-    <ThemeProvider theme={Theme[reduxTheme]}>
+    <ThemeProvider theme={ColorTheme[reduxTheme]}>
       <Switch>
         <Route path="/" component={() => <HomePage />} />
       </Switch>

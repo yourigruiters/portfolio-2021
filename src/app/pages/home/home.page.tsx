@@ -2,7 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
-  background-color: green;
+  ${({ theme: { colors } }) => `
+    background-color: ${colors.backgroundColor};
+  `}
 `;
 
 const Button = styled.button`
