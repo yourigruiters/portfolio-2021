@@ -3,13 +3,17 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
   ${({ theme: { colors } }) => `
-    background: ${colors.red08};
-    color: ${colors.text00}
+    background-color: ${colors.red08};
   `}
 `;
 
-const Button = styled.div`
+const Button = styled.button`
+  ${({ theme: { colors } }) => `
+  background-color: ${colors.neutral00};
+  color: ${colors.text00};
+  margin: 40px;
   padding: 20px;
+`}
 `;
 
 interface Props {
