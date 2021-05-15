@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "cloud": ["cloud"],
-      "local": ["local"],
-      "shared": ["shared"]
+      "app": ["app"]
     },
     "module": "commonjs",
     "target": "ES2020",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { ThemeProvider } from '@emotion/react';
 import HomePage from './modules/home/home.view';
+import { ThemeProvider } from '@emotion/react';
 import { Theme, ThemeType } from '../styles/theme';
 
 interface AppProps {}
