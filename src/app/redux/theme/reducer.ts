@@ -1,4 +1,4 @@
-import { SWITCH_THEME } from './types';
+import { SWITCH_THEME, SET_THEME } from './types';
 import { ReduxActionState } from '../../typings/state';
 import { ThemeType } from 'app/styles/theme';
 
@@ -14,10 +14,21 @@ const themeReducer = (
   state = initialState,
   action: ReduxActionState,
 ) => {
-  const { type } = action;
+  const { type, payload } = action;
 
   switch (type) {
+    case SET_THEME: {
+      return {
+        ...state,
+        theme: payload,
+      };
+    }
     case SWITCH_THEME: {
+      localStorage.setItem(
+        'theme',
+        state.theme === 'light' ? 'dark' : 'light',
+      );
+
       return {
         ...state,
         theme: state.theme === 'light' ? 'dark' : 'light',

@@ -1,3 +1,4 @@
+import { setTheme } from './../redux/theme/actions';
 import { ReduxState } from '../typings/state';
 import App from '../app';
 import { connect } from 'react-redux';
@@ -9,7 +10,9 @@ const mapStateToProps = (state: ReduxState) => {
   };
 };
 
-const mapDispatchToProps = null;
+const mapDispatchToProps = {
+  setTheme,
+};
 
 export default connect(
   mapStateToProps,

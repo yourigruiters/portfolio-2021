@@ -81,17 +81,17 @@ const Logo = styled.img<{ active: boolean }>`
 
 interface Props {
   theme: ThemeType;
-  setTheme: () => void;
+  switchTheme: () => void;
 }
 
-const ThemeSwitcher: React.FC<Props> = ({ theme, setTheme }) => {
+const ThemeSwitcher: React.FC<Props> = ({ theme, switchTheme }) => {
   return (
     <Container>
       <Logo
         src={dark}
         alt="dark mode"
         active={theme === 'dark'}
-        onClick={setTheme}
+        onClick={switchTheme}
       />
       <div className="theme-switch-wrapper">
         <label className="theme-switch" htmlFor="checkbox">
@@ -99,7 +99,7 @@ const ThemeSwitcher: React.FC<Props> = ({ theme, setTheme }) => {
             type="checkbox"
             id="checkbox"
             checked={theme === 'light'}
-            onChange={setTheme}
+            onChange={switchTheme}
           />
           <div className="slider round"></div>
         </label>
@@ -108,7 +108,7 @@ const ThemeSwitcher: React.FC<Props> = ({ theme, setTheme }) => {
         src={light}
         alt="light mode"
         active={theme === 'light'}
-        onClick={setTheme}
+        onClick={switchTheme}
       />
     </Container>
   );

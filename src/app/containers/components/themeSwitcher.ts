@@ -1,4 +1,4 @@
-import { setTheme } from '../../redux/theme/actions';
+import { switchTheme } from './../../redux/theme/actions';
 import { connect } from 'react-redux';
 import ThemeSwitcher from '../../components/themeSwitcher/ThemeSwitcher';
 import { ReduxState } from 'app/typings/state';
@@ -11,7 +11,7 @@ const mapStateToProps = (state: ReduxState) => {
 };
 
 const mapDispatchToProps = {
-  setTheme,
+  switchTheme,
 };
 
 export default connect(
