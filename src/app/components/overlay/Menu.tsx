@@ -1,7 +1,14 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+`;
 
 const Cover = styled.div`
   width: 40px;
@@ -87,7 +94,7 @@ const Label = styled.label`
     position: absolute;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 3px;
     background-color: #fff;
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
   }
@@ -98,6 +105,8 @@ const Label = styled.label`
 
   &:after {
     top: 12px;
+    width: 80%;
+    left: 10%;
   }
 `;
 
@@ -106,13 +115,13 @@ const MenuText = styled.div`
   top: 24px;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: #fff;
 
   &:before {
     content: 'MENU';
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 0;
     left: 0;
     margin-top: -5px;
@@ -123,19 +132,61 @@ const MenuText = styled.div`
   }
 `;
 
+const List = styled.ul<{ isActive: boolean }>`
+  ${({ isActive }) => `
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: ${isActive ? '200' : '0'}px;
+    width: 100%;
+    padding-top: 20px;
+    overflow: hidden;
+    color: white;
+    transition: height 0.5s linear;
+  `}
+`;
+
 interface Props {}
 
 const Menu: React.FC<Props> = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    console.log(isActive);
+  }, [isActive]);
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsActive(false);
+  };
+
   return (
-    <Container>
-      <Cover>
+    <Container
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => handleMouseLeave()}
+    >
+      <Cover onClick={() => setIsActive(true)}>
         <Button>
-          <Input type="checkbox" id="menu_checkbox" />
+          <Input
+            type="checkbox"
+            id="menu_checkbox"
+            checked={isHovered || isActive}
+          />
           <Label htmlFor="menu_checkbox" className="menu_label">
-            <MenuText className="menu_text_bar"></MenuText>
+            <MenuText className="menu_text_bar" />
           </Label>
         </Button>
       </Cover>
+      <List isActive={isActive}>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+        <div>123</div>
+      </List>
     </Container>
   );
 };
