@@ -8,75 +8,66 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: auto;
-  height: auto;
+`;
 
-  .theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin: 0px 5px;
-  }
+const Switcher = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0px 5px;
+  cursor: pointer;
+`;
 
-  .theme-switch {
-    display: inline-block;
-    height: 22px;
-    position: relative;
-    width: 40px;
-  }
+const Label = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+`;
 
-  .theme-switch input {
-    display: none;
-  }
+const Input = styled.input`
+  display: none;
 
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: 0.4s;
-  }
-
-  .slider:before {
-    background-color: #fff;
-    bottom: 2px;
-    content: '';
-    height: 18px;
-    left: 2px;
-    position: absolute;
-    transition: 0.4s;
-    width: 18px;
-  }
-
-  input:checked + .slider {
+  &:checked + .slider {
     background-color: #66bb6a;
   }
 
-  input:checked + .slider:before {
+  &:checked + .slider:before {
     transform: translateX(18px);
   }
+`;
 
-  .slider.round {
-    border-radius: 18px;
-  }
+const Slider = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #ccc;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: 0.4s;
 
-  .slider.round:before {
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
     border-radius: 50%;
+    transition: 0.4s;
   }
 `;
 
 const Logo = styled.img<{ active: boolean }>`
   ${({ active }) => `
-        display: flex;
-        width: 18px;
-        height: 18px;
-        cursor: pointer;
-
-        filter: grayscale(${active ? '0%' : '100%'});
-    `}
+    display: flex;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    filter: grayscale(${active ? '0%' : '100%'});
+  `}
 `;
 
 interface Props {
@@ -93,17 +84,17 @@ const ThemeSwitcher: React.FC<Props> = ({ theme, switchTheme }) => {
         active={theme === 'dark'}
         onClick={switchTheme}
       />
-      <div className="theme-switch-wrapper">
-        <label className="theme-switch" htmlFor="checkbox">
-          <input
+      <Switcher>
+        <Label htmlFor="checkbox">
+          <Input
             type="checkbox"
             id="checkbox"
             checked={theme === 'light'}
             onChange={switchTheme}
           />
-          <div className="slider round"></div>
-        </label>
-      </div>
+          <Slider className="slider" />
+        </Label>
+      </Switcher>
       <Logo
         src={light}
         alt="light mode"
