@@ -16,7 +16,7 @@
     "jsx": "react",
     "resolveJsonModule": true,
     "importHelpers": true,
-    "noEmitOnError": true,
+    "noEmitOnError": false,
     "declaration": true,
     "declarationDir": "lib",
     "allowJs": true,

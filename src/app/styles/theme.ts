@@ -111,6 +111,11 @@ export interface ITheme {
     text03: string;
     text04: string;
   };
+  fonts: {
+    header: string;
+    text: string;
+    tag: string;
+  };
 }
 
 export const lightTheme = {
@@ -224,6 +229,11 @@ export const lightTheme = {
     text03: 'rgba(0,0,0,0.45)',
     text04: 'rgba(0,0,0,0.2)',
   },
+  fonts: {
+    header: "'Ultra', serif",
+    text: "'Open Sans', sans-serif",
+    tag: "'Coming Soon', cursive",
+  },
 };
 
 export const darkTheme = {
@@ -336,6 +346,11 @@ export const darkTheme = {
     text02: 'rgba(255, 255, 255, 0.65)',
     text03: 'rgba(255, 255, 255, 0.45)',
     text04: 'rgba(255, 255, 255, 0.2)',
+  },
+  fonts: {
+    header: "'Ultra', serif",
+    text: "'Open Sans', sans-serif",
+    tag: "'Coming Soon', cursive",
   },
 };
 

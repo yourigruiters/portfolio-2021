@@ -1,32 +1,15 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import Overlay from '../../components/overlay/Overlay';
+import Container from '../../components/Container';
 
-const Container = styled.div`
-  ${({ theme: { colors } }) => `
-    background-color: ${colors.red08};
-  `}
-`;
+interface Props {}
 
-const Button = styled.button`
-  ${({ theme: { colors } }) => `
-  background-color: ${colors.neutral00};
-  color: ${colors.text00};
-  margin: 40px;
-  padding: 20px;
-`}
-`;
-
-interface Props {
-  setTheme: () => void;
-}
-
-const HomePage: React.FC<Props> = ({ setTheme }) => {
-  const testing = 'Toggle Theme';
-
+const HomePage: React.FC<Props> = () => {
   return (
-    <Container>
-      <Button onClick={setTheme}>{testing}</Button>
-    </Container>
+    <>
+      <Container>123</Container>
+      <Overlay />
+    </>
   );
 };
 

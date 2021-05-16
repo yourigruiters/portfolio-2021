@@ -112,5 +112,10 @@ declare module '@emotion/react' {
       text03: string;
       text04: string;
     };
+    fonts: {
+      header: string;
+      text: string;
+      tag: string;
+    };
   }
 }
