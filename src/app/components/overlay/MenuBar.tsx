@@ -3,8 +3,9 @@ import React from 'react';
 import logo from '../../media/images/logo.png';
 import instagram from '../../media/images/instagram.png';
 import linkedin from '../../media/images/linkedin.png';
+import Menu from './Menu';
 
-const Menu = styled.div`
+const Container = styled.div`
   ${({ theme: { colors } }) => `
         display: flex;
         flex-direction: column;
@@ -48,15 +49,14 @@ interface Props {}
 
 const MenuBar: React.FC<Props> = () => {
   return (
-    <Menu>
+    <Container>
       <Logo src={logo} alt="logo" />
-      {/* Menu */}
-      <div>123</div>
+      <Menu />
       <SocialMedia>
         <SMLogo src={instagram} alt="instagram" />
         <SMLogo src={linkedin} alt="linkedin" />
       </SocialMedia>
-    </Menu>
+    </Container>
   );
 };
 
