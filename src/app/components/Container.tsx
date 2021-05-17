@@ -9,8 +9,9 @@ const Contain = styled.main`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
-  padding: 40px 40px 40px 130px;
+  min-height: 300vh;
+  margin: 40px 0px;
+  padding: 0px 40px 0px 130px;
 `;
 
 const Temp = styled.div`

@@ -7,18 +7,28 @@ import Menu from './Menu';
 
 const Container = styled.div`
   ${({ theme: { colors } }) => `
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 130px;
-        padding: 20px;
-        background-color: ${colors.neutral00};
-    `}
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    height: 100%;
+    padding: 40px 0px;
+    background-color: ${colors.neutral00};
+  `}
+`;
+
+const LogoHolder = styled.div`
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 0px 20px;
 `;
 
 const Logo = styled.img`
-  display: flex;
   width: 100%;
   height: auto;
   cursor: pointer;
@@ -30,9 +40,10 @@ const SocialMedia = styled.div`
   align-items: center;
   width: 100%;
   height: auto;
+  margin: 0px 20px;
 `;
 
-const SMLogo = styled.img`
+const SMIcon = styled.img`
   display: flex;
   width: 30px;
   height: 30px;
@@ -50,11 +61,13 @@ interface Props {}
 const MenuBar: React.FC<Props> = () => {
   return (
     <Container>
-      <Logo src={logo} alt="logo" />
+      <LogoHolder>
+        <Logo src={logo} alt="logo" />
+      </LogoHolder>
       <Menu />
       <SocialMedia>
-        <SMLogo src={instagram} alt="instagram" />
-        <SMLogo src={linkedin} alt="linkedin" />
+        <SMIcon src={instagram} alt="instagram" />
+        <SMIcon src={linkedin} alt="linkedin" />
       </SocialMedia>
     </Container>
   );
