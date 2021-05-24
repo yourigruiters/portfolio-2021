@@ -16,7 +16,7 @@ const Container = styled.div`
     align-items: center;
     width: 130px;
     height: 100%;
-    padding: 40px 0px;
+    padding: 45px 0px;
     background-color: ${colors.neutral00};
   `}
 `;
@@ -40,13 +40,14 @@ const SocialMedia = styled.div`
   align-items: center;
   width: 100%;
   height: auto;
-  margin: 0px 20px;
+  margin-bottom: 5px;
+  padding: 0px 15px;
 `;
 
 const SMIcon = styled.img`
   display: flex;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
   filter: grayscale(100%);
   transition: filter 0.25s linear;

@@ -6,6 +6,7 @@ import ThemeSwitcher from '../../containers/components/themeSwitcher';
 
 const TopBar = styled.div`
   ${({ theme: { colors } }) => `
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,6 +22,7 @@ const TopBar = styled.div`
 
 const BottomBar = styled.div`
   ${({ theme: { colors } }) => `
+  z-index: 2;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -36,6 +38,7 @@ const BottomBar = styled.div`
 
 const RightBar = styled.div`
   ${({ theme: { colors } }) => `
+  z-index: 2;
     position: fixed;
     top: 0;
     right: 0;

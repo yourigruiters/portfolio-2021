@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto;
 `;
 
 const Cover = styled.div`
@@ -83,40 +83,43 @@ const Input = styled.input`
 `;
 
 const Label = styled.label`
-  position: relative;
-  display: block;
-  height: 29px;
-  cursor: pointer;
+  ${({ theme: { colors } }) => `
+    position: relative;
+    display: block;
+    height: 29px;
+    cursor: pointer;
 
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-    transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
-  }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: ${colors.neutral12};
+      transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
 
-  &:before {
-    top: 0;
-  }
+    &:before {
+      top: 0;
+    }
 
-  &:after {
-    top: 12px;
-    width: 80%;
-    left: 10%;
-  }
+    &:after {
+      top: 12px;
+      width: 80%;
+      left: 10%;
+    }
+  `};
 `;
 
 const MenuText = styled.div`
+  ${({ theme: { colors } }) => `
   position: absolute;
   top: 24px;
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: ${colors.neutral12};
 
   &:before {
     content: 'MENU';
@@ -125,25 +128,36 @@ const MenuText = styled.div`
     right: 0;
     left: 0;
     margin-top: -5px;
-    color: #fff;
+    color: ${colors.neutral12};
     font-size: 12px;
     font-weight: bold;
     text-align: center;
   }
+  `};
 `;
 
 const List = styled.ul<{ isActive: boolean }>`
-  ${({ isActive }) => `
+  ${({ isActive, theme: { colors } }) => `
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: ${isActive ? '200' : '0'}px;
+    height: ${isActive ? '150' : '0'}px;
     width: 100%;
     padding-top: 20px;
     overflow: hidden;
-    color: white;
+    color: ${colors.neutral00};
     transition: height 0.5s linear;
-  `}
+  `};
+`;
+
+const ListItem = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25px;
+
+  color: red;
 `;
 
 interface Props {}
@@ -179,13 +193,11 @@ const Menu: React.FC<Props> = () => {
         </Button>
       </Cover>
       <List isActive={isActive}>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
+        <ListItem>123</ListItem>
+        <ListItem>123</ListItem>
+        <ListItem>123</ListItem>
+        <ListItem>123</ListItem>
+        <ListItem>123</ListItem>
       </List>
     </Container>
   );
