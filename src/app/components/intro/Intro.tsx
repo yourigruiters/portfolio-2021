@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
+import Particles from './Particles';
 
 const Container = styled.div<{ ready: boolean }>`
   ${({ theme: { colors }, ready }) => `
@@ -40,8 +41,8 @@ const Front = styled.div<{ ready: boolean }>`
 	transition: transform 2s;
 
 	background-color: #bbb;
+	background: linear-gradient(135deg, #2c3e50, #000, #000);
 	color: ${colors.neutral12};
-	color: red;
 
 	transform: ${ready ? 'rotateX(180deg)' : 'rotateX(0deg)'};
 	`};
@@ -57,7 +58,6 @@ const Back = styled.div<{ ready: boolean }>`
 	height: 100%;
 	backface-visibility: hidden;
 	color: ${colors.neutral06};
-	background-color: green;
 
 	transition: transform 2s;
 	transform: ${ready ? 'rotateX(360deg)' : 'rotateX(180deg)'};
@@ -86,7 +86,7 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
   useEffect(() => {
     setTimeout(() => {
       setReady(true);
-    }, 3000);
+    }, 30000);
   }, []);
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
     <Container ready={ready}>
       <Inner ready={ready}>
         <Front ready={ready}>
-          <h2>Front Side</h2>
+          <Particles />
         </Front>
         <Back ready={ready}>
           <div></div>
