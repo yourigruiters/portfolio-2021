@@ -86,7 +86,7 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
   useEffect(() => {
     setTimeout(() => {
       setReady(true);
-    }, 30000);
+    }, 15000);
   }, []);
 
   useEffect(() => {

@@ -90,7 +90,6 @@ interface ParticleProps {
   delay: number;
   circleDelay: number;
   random1001: number;
-  random1002: number;
   random30: number;
 }
 
@@ -104,13 +103,12 @@ const Particles: React.FC<Props> = () => {
       const particleDetails = {
         id: i,
         circleSize: random(1, 8),
-        startPosition: random(1, 10) + 100,
+        startPosition: 100,
         name: `particle-${i}`,
-        duration: 28000 + random(1, 25000),
+        duration: 20000 + random(1, 25000),
         delay: random(1, 90000),
         circleDelay: random(1, 4000),
         random1001: random(1, 109),
-        random1002: random(1, 100),
         random30: random(1, 30),
       };
 

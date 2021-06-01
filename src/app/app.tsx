@@ -13,7 +13,7 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
   useEffect(() => {
     const theme = localStorage.getItem('theme');
 
-    if (theme !== 'undefined') {
+    if (theme !== 'undefined' || !theme) {
       setTheme(theme as ThemeType);
     } else {
       setTheme('light');
@@ -21,7 +21,7 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
   }, []);
 
   return (
-    <ThemeProvider theme={ColorTheme[reduxTheme]}>
+    <ThemeProvider theme={ColorTheme[reduxTheme || 'light']}>
       <Switch>
         <Route path="/">
           <HomePage />
