@@ -8,13 +8,13 @@ const Container = styled.div`
     height: calc(100vh - 80px);
     background-color: ${colors.neutral00};
 
-    div:first-child {
+    div:first-of-type {
       height: 100%;
       width: 100%;
       background-color: #ff5851;
     }
 
-    div:last-child {
+    div:last-of-type {
       height: 100%;
       width: 100%;
       background-color: #f8f8f8;

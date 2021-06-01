@@ -38,7 +38,7 @@ const BottomBar = styled.div`
 
 const RightBar = styled.div`
   ${({ theme: { colors } }) => `
-  z-index: 2;
+    z-index: 2;
     position: fixed;
     top: 0;
     right: 0;
