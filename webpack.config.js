@@ -1,9 +1,7 @@
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const __dirname = path.resolve();
-
-export default {
+module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,11 +16,6 @@ export default {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: 'ts-loader',
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader',
       },
       { test: /\.(js)$/, use: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
