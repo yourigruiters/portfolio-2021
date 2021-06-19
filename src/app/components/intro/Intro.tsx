@@ -8,7 +8,7 @@ const Container = styled.div<{ ready: boolean }>`
     position: relative;
     display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: ${colors.neutral00};
     perspective: 2000px;
     overflow: hidden;
@@ -86,7 +86,7 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
   useEffect(() => {
     setTimeout(() => {
       setReady(true);
-    }, 15000);
+    }, 15000); //15000
   }, []);
 
   useEffect(() => {
