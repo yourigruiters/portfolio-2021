@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import Text from '../text/Text';
 import MenuBar from './MenuBar';
 import ThemeSwitcher from '../../containers/components/themeSwitcher';
 
@@ -48,6 +47,15 @@ const RightBar = styled.div`
     padding: 40px 0px;
     background-color: ${colors.neutral00};
 `}
+`;
+
+const Text = styled.p`
+  ${({ theme: { colors, fonts } }) => `
+      color: ${colors.text03};
+      font-family: ${fonts.header};
+      font-size: 12px;
+      line-height: 20px;
+  `}
 `;
 
 interface Props {}

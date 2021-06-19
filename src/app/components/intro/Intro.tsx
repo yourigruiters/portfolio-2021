@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
+import SkipSection from './components/SkipSection';
 import Particles from './Particles';
 
 const Container = styled.div<{ ready: boolean }>`
@@ -86,7 +87,7 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
   useEffect(() => {
     setTimeout(() => {
       setReady(true);
-    }, 15000); //15000
+    }, 180000); //15000
   }, []);
 
   useEffect(() => {
@@ -97,12 +98,12 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
     }
   }, [ready]);
 
-  console.log(skipIntro);
   return (
     <Container ready={ready}>
       <Inner ready={ready}>
         <Front ready={ready}>
           <Particles />
+          <SkipSection skipIntro={skipIntro} />
         </Front>
         <Back ready={ready}>
           <div></div>
