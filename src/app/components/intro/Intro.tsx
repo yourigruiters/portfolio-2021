@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import SkipSection from './components/SkipSection';
+import TimeLine from './components/TimeLine';
 import Particles from './Particles';
 
 const Container = styled.div<{ ready: boolean }>`
@@ -103,6 +104,7 @@ const Intro: React.FC<Props> = ({ skipIntro }) => {
       <Inner ready={ready}>
         <Front ready={ready}>
           <Particles />
+          <TimeLine />
           <SkipSection skipIntro={skipIntro} />
         </Front>
         <Back ready={ready}>
