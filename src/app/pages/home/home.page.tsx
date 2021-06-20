@@ -7,7 +7,7 @@ import Intro from '../../components/intro/Intro';
 interface Props {}
 
 const HomePage: React.FC<Props> = () => {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(false); // true
 
   const skipIntro = () => {
     setShowIntro(false);

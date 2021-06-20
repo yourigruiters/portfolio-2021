@@ -61,13 +61,11 @@ const Slider = styled.div`
 `;
 
 const Logo = styled.img<{ active: boolean }>`
-  ${({ active }) => `
-    display: flex;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    filter: grayscale(${active ? '0%' : '100%'});
-  `}
+  display: flex;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  filter: grayscale(${({ active }) => (active ? '0%' : '100%')});
 `;
 
 interface Props {

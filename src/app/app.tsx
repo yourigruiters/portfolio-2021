@@ -6,12 +6,10 @@ import HomePage from './containers/pages/home';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
-  ${({ theme: { colors } }) => `
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: ${colors.neutral00};
-  `};
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: ${({ theme: { colors } }) => colors.background};
 `;
 
 interface Props {

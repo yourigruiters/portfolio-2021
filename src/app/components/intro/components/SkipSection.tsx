@@ -23,15 +23,13 @@ const RememberContainer = styled.div`
 `;
 
 const Text = styled.p`
-  ${({ theme: { colors } }) => `
-      color: ${colors.neutral00};
-      font-size: 12px;
-      line-height: 20px;
+  color: ${({ theme: { colors } }) => colors.text00};
+  font-size: 12px;
+  line-height: 20px;
 
-      span {
-        font-weight: bold;
-      }
-  `}
+  span {
+    font-weight: bold;
+  }
 `;
 
 interface Props {

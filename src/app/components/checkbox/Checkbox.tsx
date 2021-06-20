@@ -12,16 +12,13 @@ const Container = styled.div`
 `;
 
 const StyledCheckbox = styled.input<{ checked: boolean }>`
-  ${({ theme: { colors }, checked }) => `
-    width: 100%;
-    height: 100%;
-    border: 1px solid ${colors.aqua06};
-    border-radius: 8px;
-    cursor: pointer;
-    background: ${
-      checked ? 'rgba(40,40,40,0.2)' : 'rgba(40,40,40,0.7)'
-    };
-  `}
+  width: 100%;
+  height: 100%;
+  border: 1px solid ${({ theme: { colors } }) => colors.background};
+  border-radius: 8px;
+  cursor: pointer;
+  background: ${({ checked }) =>
+    checked ? 'rgba(40,40,40,0.2)' : 'rgba(40,40,40,0.7)'};
 `;
 
 interface Props {

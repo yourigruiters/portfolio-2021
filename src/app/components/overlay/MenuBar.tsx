@@ -6,19 +6,17 @@ import linkedin from '../../media/images/linkedin.png';
 import Menu from './Menu';
 
 const Container = styled.div`
-  ${({ theme: { colors } }) => `
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 130px;
-    height: 100%;
-    padding: 45px 0px;
-    background-color: ${colors.neutral00};
-  `}
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  height: 100%;
+  padding: 45px 0px;
+  background-color: ${({ theme: { colors } }) => colors.background};
 `;
 
 const LogoHolder = styled.div`

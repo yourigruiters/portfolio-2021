@@ -1,34 +1,42 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Coding from './components/Coding';
 
 const Container = styled.div`
-  ${({ theme: { colors } }) => `
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-color: ${colors.neutral00};
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: ${({ theme: { colors } }) => colors.background};
+`;
 
-    div:first-of-type {
-      height: 100%;
-      width: 100%;
-      background-color: #ff5851;
-    }
-
-    div:last-of-type {
-      height: 100%;
-      width: 100%;
-      background-color: #f8f8f8;
-    }
-  `}
+const Content = styled.div`
+  height: 100%;
+  width: 100%;
+  background-color: #ff5851;
 `;
 
 interface Props {}
 
 const Landing: React.FC<Props> = () => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setReady(true);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
+    if (ready) {
+      setTimeout(() => {
+        console.log('wimpie');
+      }, 1650);
+    }
+  }, [ready]);
   return (
     <Container>
-      <div></div>
-      <div></div>
+      <Content></Content>
+      <Coding ready={ready} />
     </Container>
   );
 };

@@ -83,43 +83,40 @@ const Input = styled.input`
 `;
 
 const Label = styled.label`
-  ${({ theme: { colors } }) => `
-    position: relative;
-    display: block;
-    height: 29px;
-    cursor: pointer;
+  position: relative;
+  display: block;
+  height: 29px;
+  cursor: pointer;
 
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: ${colors.neutral12};
-      transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: ${({ theme: { colors } }) => colors.text00};
+    transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
 
-    &:before {
-      top: 0;
-    }
+  &:before {
+    top: 0;
+  }
 
-    &:after {
-      top: 12px;
-      width: 80%;
-      left: 10%;
-    }
-  `};
+  &:after {
+    top: 12px;
+    width: 80%;
+    left: 10%;
+  }
 `;
 
 const MenuText = styled.div`
-  ${({ theme: { colors } }) => `
   position: absolute;
   top: 24px;
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: ${colors.neutral12};
+  background-color: ${({ theme: { colors } }) => colors.text00};
 
   &:before {
     content: 'MENU';
@@ -128,26 +125,24 @@ const MenuText = styled.div`
     right: 0;
     left: 0;
     margin-top: -5px;
-    color: ${colors.neutral12};
+    color: ${({ theme: { colors } }) => colors.text00};
     font-size: 12px;
     font-weight: bold;
     text-align: center;
   }
-  `};
 `;
 
 const List = styled.ul<{ isActive: boolean }>`
-  ${({ isActive, theme: { colors } }) => `
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: ${isActive ? '150' : '0'}px;
-    width: 100%;
-    padding-top: 20px;
-    overflow: hidden;
-    color: ${colors.neutral00};
-    transition: height 0.5s linear;
-  `};
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: ${({ isActive }) => (isActive ? '150' : '0')}px;
+
+  width: 100%;
+  padding-top: 20px;
+  overflow: hidden;
+  color: ${({ theme: { colors } }) => colors.text00};
+  transition: height 0.5s linear;
 `;
 
 const ListItem = styled.li`
