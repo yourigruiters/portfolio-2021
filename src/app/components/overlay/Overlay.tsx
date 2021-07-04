@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import ThemeSwitcher from '../../containers/components/themeSwitcher';
-import logo from '../../media/images/logo.png';
 import instagram from '../../media/images/instagram.png';
 import linkedin from '../../media/images/linkedin.png';
 
@@ -60,23 +59,22 @@ const LeftBar = styled.div`
 
 const Text = styled.p`
   color: ${({ theme: { colors } }) => colors.text03};
-  font-family: ${({ theme: { fonts } }) => fonts.header};
+  font-family: ${({ theme: { fonts } }) => fonts.text};
   font-size: 12px;
   line-height: 20px;
 `;
 
-const LogoHolder = styled.div`
+const TitleContainer = styled.div`
   display: flex;
-  width: 55px;
+  width: 100%;
   height: 40px;
-  margin-left: 20px;
-  padding: 5px 0px;
 `;
 
-const Logo = styled.img`
-  width: 100%;
-  height: 30px;
-  cursor: pointer;
+const Title = styled.p`
+  color: ${({ theme: { colors } }) => colors.text03};
+  font-family: ${({ theme: { fonts } }) => fonts.text};
+  font-size: 18px;
+  line-height: 40px;
 `;
 
 const SocialMedia = styled.div`
@@ -106,9 +104,9 @@ const Overlay: React.FC<Props> = () => {
   return (
     <>
       <TopBar>
-        <LogoHolder>
-          <Logo src={logo} alt="logo" />
-        </LogoHolder>
+        <TitleContainer>
+          <Title>Youri.IO</Title>
+        </TitleContainer>
         <ThemeSwitcher />
       </TopBar>
       <LeftBar />
