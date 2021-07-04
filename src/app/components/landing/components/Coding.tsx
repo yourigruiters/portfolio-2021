@@ -8,7 +8,10 @@ const Container = styled.div<{ ready: boolean }>`
   width: ${({ ready }) => (ready ? '30%' : '100%')};
   background-color: ${({ theme: { colors } }) =>
     colors.backgroundDark};
-  border-left: 5px solid red;
+  border: 1px solid
+    ${({ theme: { colors } }) => colors.backgroundLight};
+  border-left: 12px solid
+    ${({ theme: { colors } }) => colors.backgroundLight};
   transition: width 1s;
 
   * > {
@@ -20,7 +23,10 @@ const Container = styled.div<{ ready: boolean }>`
 const Header = styled.div`
   background-color: ${({ theme: { colors } }) =>
     colors.backgroundDarkest};
-  border: 1px solid rgba(88, 89, 93, 0.2);
+  border-top: 1px solid
+    ${({ theme: { colors } }) => colors.backgroundLight};
+  border-bottom: 1px solid
+    ${({ theme: { colors } }) => colors.backgroundLight};
   min-height: 53px;
   margin-bottom: 40px;
 `;

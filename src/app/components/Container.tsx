@@ -10,8 +10,8 @@ const Contain = styled.main`
   width: 100%;
   height: 100%;
   min-height: 300vh;
-  margin: 44px 0px;
-  padding: 0px 40px 0px 130px;
+  margin: 40px 0px;
+  padding: 0px 40px 0px 40px;
 `;
 
 const Temp = styled.div`

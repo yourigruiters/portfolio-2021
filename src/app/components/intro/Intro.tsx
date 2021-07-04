@@ -16,7 +16,7 @@ const Container = styled.div<{ ready: boolean }>`
   transition: margin 2s, padding 2s;
   margin: ${({ ready }) => (ready ? '40px 0px' : '0px 0px')};
   padding: ${({ ready }) =>
-    ready ? '0px 40px 0px 130px' : '0px 0px 0px 0px'};
+    ready ? '0px 40px 0px 40px' : '0px 0px 0px 0px'};
 `;
 
 const Inner = styled.div<{ ready: boolean }>`
