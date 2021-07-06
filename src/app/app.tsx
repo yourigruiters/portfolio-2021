@@ -24,12 +24,13 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
     if (theme !== 'undefined' || !theme) {
       setTheme(theme as ThemeType);
     } else {
-      setTheme('light');
+      setTheme('dark'); // Light by default
     }
   }, []);
 
   return (
-    <ThemeProvider theme={ColorTheme[reduxTheme || 'light']}>
+    <ThemeProvider theme={ColorTheme[reduxTheme || 'dark']}>
+      {/* SET THE ABOVE TO LIGHT BY DEFAULT */}
       <Container>
         <Switch>
           <Route path="/">

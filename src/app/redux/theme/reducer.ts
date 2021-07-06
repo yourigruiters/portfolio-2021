@@ -7,7 +7,7 @@ export interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  theme: 'light',
+  theme: 'dark', // SET LIGHT BY DEFAULT
 };
 
 const themeReducer = (

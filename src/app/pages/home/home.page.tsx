@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Overlay from '../../components/overlay/Overlay';
-import Container from '../../components/Container';
+import Main from '../../components/Main';
 import Landing from '../../components/landing/Landing';
 import Intro from '../../components/intro/Intro';
+import Locations from '../../components/locations/Locations';
 
 interface Props {}
 
@@ -19,10 +19,10 @@ const HomePage: React.FC<Props> = () => {
         <Intro skipIntro={skipIntro} />
       ) : (
         <>
-          <Container>
+          <Main>
             <Landing />
-          </Container>
-          <Overlay />
+            <Locations />
+          </Main>
         </>
       )}
     </>
