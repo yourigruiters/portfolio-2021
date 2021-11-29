@@ -2,20 +2,28 @@
 <html>
   <head>
     <title>Youri.io | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Open+Sans:wght@300;400;600;700&family=Ultra&display=swap"
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <style>
       * {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Heebo', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        transition: background 0.4s linear,
-          background-color 0.4s linear, color 0.4s linear;
+        transition: background 0.4s linear, fill 0.4s linear,
+          background-image 0.4s linear, background-color 0.4s linear,
+          color 0.4s linear;
+        transition: 0.4s linear;
         outline: none;
+        border: none;
       }
 
       html {
@@ -25,7 +33,7 @@
       #app {
         display: flex;
         width: 100%;
-        min-height: 100vh;
+        height: 100%;
       }
     </style>
   </head>

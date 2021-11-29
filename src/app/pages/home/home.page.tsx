@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Main from '../../components/Main';
-import Landing from '../../components/landing/Landing';
-import Intro from '../../components/intro/Intro';
+import About from '../../components/about/About';
 import Locations from '../../components/locations/Locations';
+import Projects from '../../components/projects/Projects';
+import Contact from '../../components/contact/Contact';
+import Footer from '../../components/footer/Footer';
+import Divider from '../../components/divider/Divider';
+import Header from '../../components/header/Header';
 
 interface Props {}
 
 const HomePage: React.FC<Props> = () => {
-  const [showIntro, setShowIntro] = useState(false); // true
-
-  const skipIntro = () => {
-    setShowIntro(false);
-  };
-
   return (
     <>
-      {showIntro ? (
-        <Intro skipIntro={skipIntro} />
-      ) : (
-        <>
-          <Main>
-            <Landing />
-            <Locations />
-          </Main>
-        </>
-      )}
+      <Main>
+        <Header />
+        <About />
+        <Divider background="dark" />
+        <Projects />
+        <Divider fill="dark" />
+        <Locations />
+        <Divider background="dark" />
+        <Contact />
+      </Main>
+      <Footer />
     </>
   );
 };

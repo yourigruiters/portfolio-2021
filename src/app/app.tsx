@@ -4,12 +4,18 @@ import { ThemeProvider } from '@emotion/react';
 import { ColorTheme, ThemeType } from './styles/theme';
 import HomePage from './containers/pages/home';
 import styled from '@emotion/styled';
+import { init } from 'emailjs-com';
+import apiKey from '../emailKey';
 
 const Container = styled.div`
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   background-color: ${({ theme: { colors } }) => colors.background};
+
+  *::selection {
+    background-color: ${({ theme: { colors } }) => colors.primary};
+  }
 `;
 
 interface Props {
@@ -26,6 +32,10 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
     } else {
       setTheme('dark'); // Light by default
     }
+  }, []);
+
+  useEffect(() => {
+    init(apiKey.USER_ID);
   }, []);
 
   return (

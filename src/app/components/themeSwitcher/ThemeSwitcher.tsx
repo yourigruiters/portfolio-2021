@@ -74,7 +74,6 @@ interface Props {
 }
 
 const ThemeSwitcher: React.FC<Props> = ({ theme, switchTheme }) => {
-  console.log(theme);
   return (
     <Container>
       <Logo
