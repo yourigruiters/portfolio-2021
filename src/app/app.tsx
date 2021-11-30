@@ -14,7 +14,9 @@ const Container = styled.div`
   background-color: ${({ theme: { colors } }) => colors.background};
 
   *::selection {
-    background-color: ${({ theme: { colors } }) => colors.primary};
+    background-color: ${({ theme: { colors } }) =>
+      colors.primaryLight};
+    color: #fff;
   }
 `;
 

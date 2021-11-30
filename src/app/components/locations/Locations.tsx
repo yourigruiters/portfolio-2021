@@ -65,7 +65,7 @@ const Locations: React.FC<Props> = () => {
         <Location
           city="Nijmegen"
           country="The Netherlands"
-          description="..And even though the core of the story is mostly successful, we stay on the lookout for new chapters."
+          description="..And even though happiness is at the core of this story, we stay on the lookout for new chapters."
         />
       </LocationsWrapper>
     </Container>
