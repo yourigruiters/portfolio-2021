@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import AboutImage from '../../../media/images/about.jpg';
+import { Link } from 'react-router-dom';
 import { GithubIcon } from '../../../media/icons/Icons';
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   max-width: 400px;
   width: 100%;
-  height: 500px;
+  height: 450px;
   box-shadow: 0 0 35px 0 rgb(0 0 0 / 50%);
   border-radius: 25px;
   overflow: hidden;
@@ -24,6 +24,12 @@ const Container = styled.div`
 const Image = styled.div`
   width: 100%;
   height: 500px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const Content = styled.div`
@@ -32,10 +38,12 @@ const Content = styled.div`
   width: 100%;
   height: auto;
   padding: 30px 20px;
+
   background: linear-gradient(
     180deg,
-    rgba(2, 0, 36, 0) 0%,
-    rgba(0, 0, 0, 1) 100%
+    ${({ theme: { theme } }) =>
+        theme === 'light' ? 'rgba(2, 0, 36, 1) 0%,' : '#180017 0%,'}
+      rgba(0, 0, 0, 1) 100%
   );
 `;
 
@@ -97,7 +105,7 @@ const GitHub = styled.div`
   }
 `;
 
-const Link = styled.a`
+const GithubLink = styled.p`
   width: auto;
   height: auto;
 `;
@@ -107,6 +115,8 @@ interface Props {
   description: string;
   labels: string[];
   link: string;
+  githubLink: string;
+  img: string;
 }
 
 const Project: React.FC<Props> = ({
@@ -114,27 +124,36 @@ const Project: React.FC<Props> = ({
   description,
   labels,
   link,
+  githubLink,
+  img,
 }) => {
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    window.open(githubLink, '_blank');
+  };
+
   return (
-    <Container>
-      <Image>
-        <img src={AboutImage} alt="Project-image" />
-      </Image>
-      <Content>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Labels>
-          {labels.map((label) => (
-            <Label>{label}</Label>
-          ))}
-        </Labels>
-        <Link href={link} target="_blank">
-          <GitHub>
-            <GithubIcon />
-          </GitHub>
-        </Link>
-      </Content>
-    </Container>
+    <Link to={link}>
+      <Container>
+        <Image>
+          <img src={img} alt="Project-image" />
+        </Image>
+        <Content>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <Labels>
+            {labels.map((label) => (
+              <Label>{label}</Label>
+            ))}
+          </Labels>
+          <GithubLink onClick={handleClick}>
+            <GitHub>
+              <GithubIcon />
+            </GitHub>
+          </GithubLink>
+        </Content>
+      </Container>
+    </Link>
   );
 };
 

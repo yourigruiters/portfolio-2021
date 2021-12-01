@@ -206,7 +206,7 @@ const About: React.FC<Props> = () => {
             <br />
             <br />
             <b>
-              On an adventure to find a new job as Front-end
+              On an adventure to find a new job as a front-end
               developer!
             </b>
           </Description>

@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import Heading from '../heading/Heading';
 import Project from './components/Project';
+import chatImage from '../../media/images/project-chat.png';
+import hangoutsImage from '../../media/images/project-hangouts.png';
 
 const Container = styled.div`
   display: flex;
@@ -56,13 +58,17 @@ const Projects: React.FC<Props> = () => {
           title="Limbo Hangouts"
           description="Full stack video and chat sharing application build with React, Express and Socket.io"
           labels={['React', 'Express', 'Socket.IO']}
-          link="https://github.com/yourigruiters/Full-Stack-Hangouts"
+          link="/projects/hangouts"
+          githubLink="https://github.com/yourigruiters/Full-Stack-Hangouts"
+          img={hangoutsImage}
         />
         <Project
           title="YG-Chat"
           description="Full stack chat application build with React, Redux and Socket.io. Tested with Cypress and Mocha."
           labels={['React', 'Redux', 'Express', 'Socket.IO']}
-          link="https://github.com/yourigruiters/Full-Stack-Chat"
+          link="/projects/chat"
+          githubLink="https://github.com/yourigruiters/Full-Stack-Chat"
+          img={chatImage}
         />
       </ProjectsContainer>
     </Container>
