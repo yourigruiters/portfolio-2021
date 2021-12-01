@@ -42,10 +42,15 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
 
   return (
     <ThemeProvider theme={ColorTheme[reduxTheme || 'dark']}>
-      {/* SET THE ABOVE TO LIGHT BY DEFAULT */}
       <Container>
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
+          <Route path="/project/hangouts" exact>
+            <HomePage />
+          </Route>
+          <Route path="/project/chat" exact>
             <HomePage />
           </Route>
         </Switch>

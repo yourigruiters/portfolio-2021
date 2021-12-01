@@ -6,9 +6,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['*', '.ts', '.tsx', '.js', '.json'],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
