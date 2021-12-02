@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { GithubIcon } from '../../../media/icons/Icons';
+import Labels from '../../../components/labels/Labels';
 
 const Container = styled.div`
   position: relative;
@@ -64,27 +64,6 @@ const Description = styled.p`
   margin-bottom: 15px;
 `;
 
-const Labels = styled.div`
-  display: flex;
-  column-gap: 15px;
-  width: 100%;
-  height: auto;
-  min-height: 26px;
-  margin-top: 10px;
-`;
-
-const Label = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme: { colors } }) => colors.primaryDark};
-  color: #fff;
-  padding: 4px 16px;
-  text-align: center;
-  border-radius: 100px;
-  font-size: 10px;
-`;
-
 const GitHub = styled.div`
   position: absolute;
   bottom: 30px;
@@ -133,7 +112,7 @@ const Project: React.FC<Props> = ({
   };
 
   return (
-    <Link to={link}>
+    <a href={link} target="_blank">
       <Container>
         <Image>
           <img src={img} alt="Project-image" />
@@ -141,11 +120,7 @@ const Project: React.FC<Props> = ({
         <Content>
           <Title>{title}</Title>
           <Description>{description}</Description>
-          <Labels>
-            {labels.map((label) => (
-              <Label>{label}</Label>
-            ))}
-          </Labels>
+          <Labels labels={labels} />
           <GithubLink onClick={handleClick}>
             <GitHub>
               <GithubIcon />
@@ -153,7 +128,7 @@ const Project: React.FC<Props> = ({
           </GithubLink>
         </Content>
       </Container>
-    </Link>
+    </a>
   );
 };
 

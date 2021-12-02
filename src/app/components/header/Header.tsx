@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import ThemeSwitcher from '../../containers/components/ThemeSwitcher';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Container = styled.header`
   z-index: 100;
@@ -21,6 +22,10 @@ const LogoWrapper = styled.div`
   align-items: center;
   width: auto;
   height: 28px;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Logo = styled.p`
@@ -48,9 +53,11 @@ const Header: React.FC<Props> = () => {
   return (
     <Container>
       <LogoWrapper>
-        <Logo>
-          <span>Y</span>ouri.<span>IO</span>
-        </Logo>
+        <Link to="/">
+          <Logo>
+            <span>Y</span>ouri.<span>IO</span>
+          </Logo>
+        </Link>
       </LogoWrapper>
       <MenuWrapper>
         <ThemeSwitcher />

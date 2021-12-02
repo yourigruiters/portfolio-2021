@@ -58,7 +58,7 @@ const Projects: React.FC<Props> = () => {
           title="Limbo Hangouts"
           description="Full stack video and chat sharing application build with React, Express and Socket.io"
           labels={['React', 'Express', 'Socket.IO']}
-          link="/project/hangouts"
+          link="https://hangouts-client.herokuapp.com/"
           githubLink="https://github.com/yourigruiters/Full-Stack-Hangouts"
           img={hangoutsImage}
         />
@@ -66,7 +66,7 @@ const Projects: React.FC<Props> = () => {
           title="YG-Chat"
           description="Full stack chat application build with React, Redux and Socket.io. Tested with Cypress and Mocha."
           labels={['React', 'Redux', 'Express', 'Socket.IO']}
-          link="/project/chat"
+          link="https://chat-frontend-yg.herokuapp.com/"
           githubLink="https://github.com/yourigruiters/Full-Stack-Chat"
           img={chatImage}
         />

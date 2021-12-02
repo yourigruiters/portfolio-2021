@@ -32,7 +32,7 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
     if (theme !== 'undefined' || !theme) {
       setTheme(theme as ThemeType);
     } else {
-      setTheme('dark'); // Light by default
+      setTheme('dark');
     }
   }, []);
 
@@ -45,12 +45,6 @@ const App: React.FC<Props> = ({ reduxTheme, setTheme }) => {
       <Container>
         <Switch>
           <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/project/hangouts" exact>
-            <HomePage />
-          </Route>
-          <Route path="/project/chat" exact>
             <HomePage />
           </Route>
         </Switch>
